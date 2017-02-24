@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id"
+          content="686858285520-njm4vf8tkaaqihhj0ad2tls60hng5trn.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+
+    function onLoad() {
+      gapi.load('auth2', function() {
+        gapi.auth2.init();
+      });
+    }
+
+</script>
+<a href="#" onclick="signOut();">Sign out</a>
+
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+</body>
+</html>
